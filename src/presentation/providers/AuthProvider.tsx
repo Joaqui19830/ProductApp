@@ -4,10 +4,8 @@ import React, {PropsWithChildren, useEffect} from 'react';
 import {RootStackParams} from '../navigation/StackNavigator';
 import {useAuthStore} from '../store/auth/useAuthStore';
 
-// Este authProvider no es una pantalla aunque puede que tenga acesso usualmente esto no va a estar como una pantalla
 export const AuthProvider = ({children}: PropsWithChildren) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParams>>();
-
   const {checkStatus, status} = useAuthStore();
 
   useEffect(() => {
